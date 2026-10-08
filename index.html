@@ -1,0 +1,473 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Senorita Confeitaria · Bolo de cenoura artesanal em Petrópolis</title>
+<meta name="description" content="Bolo de cenoura como você nunca viu: 100% artesanal, com cenoura de verdade e chocolate nobre. Bolos, barra, picolé, cone e cubos recheados. Quiosque na Rua 16 de Março, Centro de Petrópolis.">
+<!-- RASCUNHO: impede o Google de indexar a prévia. Remover quando o site for aprovado. -->
+<meta name="robots" content="noindex, nofollow">
+<meta name="theme-color" content="#4A3A35">
+<meta property="og:type" content="website">
+<meta property="og:locale" content="pt_BR">
+<meta property="og:title" content="Senorita Confeitaria · Petrópolis">
+<meta property="og:description" content="Bolo de cenoura 100% artesanal, com cenoura de verdade e chocolate nobre. Peça pelo WhatsApp.">
+<meta property="og:image" content="img/hero-fatia.jpg">
+<link rel="icon" type="image/png" href="img/logo.png">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Courier+Prime:ital,wght@0,400;0,700;1,400&family=DM+Sans:opsz,wght@9..40,400..700&family=Fraunces:ital,opsz,wght,SOFT,WONK@0,9..144,300..800,0..100,0..1;1,9..144,300..800,0..100,0..1&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Bakery",
+  "name": "Senorita Confeitaria",
+  "description": "Bolo de cenoura 100% artesanal, com cenoura de verdade e chocolate nobre.",
+  "image": "img/hero-fatia.jpg",
+  "telephone": "+55 24 99988-0401",
+  "address": {
+    "@type": "PostalAddress",
+    "streetAddress": "Rua 16 de Março, Galeria 80",
+    "addressLocality": "Petrópolis",
+    "addressRegion": "RJ",
+    "addressCountry": "BR"
+  },
+  "openingHoursSpecification": [
+    { "@type": "OpeningHoursSpecification", "dayOfWeek": "Monday", "opens": "12:00", "closes": "18:00" },
+    { "@type": "OpeningHoursSpecification", "dayOfWeek": ["Tuesday", "Wednesday", "Thursday", "Friday"], "opens": "11:00", "closes": "19:00" },
+    { "@type": "OpeningHoursSpecification", "dayOfWeek": "Saturday", "opens": "10:00", "closes": "19:00" }
+  ],
+  "sameAs": ["https://www.instagram.com/senoritaconfeitaria/"]
+}
+</script>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js" defer></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js" defer></script>
+<script src="https://unpkg.com/lenis@1.1.13/dist/lenis.min.js" defer></script>
+<script src="script.js" defer></script>
+</head>
+<body>
+<a class="skip" href="#conteudo">Pular para o conteúdo</a>
+
+<!-- Ícones e formas reutilizáveis -->
+<svg class="sprite" aria-hidden="true" focusable="false">
+  <defs>
+    <g id="tear">
+      <path style="fill:var(--tear-edge,#FFF9F2)" d="M0 0H1440V40L1428 34.8L1415 47.7L1397 35.1L1383 37.9L1365 46.3L1344 31.4L1324 43.9L1310 38.3L1297 31.2L1287 34.5L1277 43.8L1261 31.8L1252 33.4L1242 38.4L1222 34.3L1202 38.1L1185 47L1165 35.4L1144 44.2L1132 48.8L1123 36.7L1113 44.7L1101 32.4L1086 57.2L1065 46.7L1055 43L1038 37.7L1029 39.6L1016 39L995 36.9L980 51.9L971 44.9L955 32.3L935 46.4L921 41.5L904 42.8L893 37.6L875 42.6L860 48.1L840 47.8L824 31.8L809 42.6L793 44L778 45.3L765 41.6L745 35.4L732 47.1L723 45.7L704 44.7L693 46.7L681 33.3L667 36.1L649 34L628 44.6L610 41.1L599 33.5L580 31.5L568 41.6L555 44.8L536 51.2L520 50.7L506 39L485 34.4L465 34.7L450 37.7L438 34.6L422 39.9L409 37.9L396 46.8L386 32.6L376 45.3L359 45.7L350 45.8L340 43.1L325 53.9L312 34.3L294 41.7L274 46.7L263 46L247 48.3L231 43.1L214 47.8L198 45.9L189 43.9L179 44.9L161 31.4L140 47.8L125 41.2L107 56.5L94 38.2L74 48.9L53 46.4L34 31.8L17 31.9L0 37.9Z"/>
+      <path fill="currentColor" d="M0 0H1440V26L1429 32.5L1405 29.4L1385 27.1L1357 23.3L1345 32.3L1323 22.5L1300 30L1280 20.6L1258 29.4L1245 28.7L1231 37.6L1217 30.9L1190 26.2L1170 26.3L1155 19.8L1138 32.5L1119 25.8L1107 22L1093 32.3L1077 27.6L1054 25.2L1029 36.2L1006 19.2L989 28L972 23.1L955 30.9L936 27.4L918 20.3L899 28.8L882 22.5L868 19.6L842 26.8L816 33.2L795 40.4L779 23.9L751 21.2L729 32.7L717 22.6L698 21.8L681 42.4L668 20.3L650 21.2L629 24.2L601 18.9L575 19.2L546 18.1L527 19.9L501 36.1L478 32.7L455 19.2L436 24.4L411 20.9L384 21.2L358 22.6L329 20.1L308 32.1L280 24.8L256 26.2L231 33L202 29.2L173 38.9L155 18L133 21.9L121 20.3L97 19.1L70 18.3L48 23L20 18.6L0 29.2Z"/>
+    </g>
+  </defs>
+  <symbol id="i-wa" viewBox="0 0 24 24"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 0 1-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 0 1-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 0 1 2.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0 0 12.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 0 0 5.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 0 0-3.48-8.413Z"/></symbol>
+  <symbol id="i-ig" viewBox="0 0 24 24"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r=".6" fill="currentColor"/></symbol>
+  <symbol id="i-pin" viewBox="0 0 24 24"><path d="M20 10c0 6-8 12-8 12s-8-6-8-12a8 8 0 0 1 16 0Z"/><circle cx="12" cy="10" r="3"/></symbol>
+  <symbol id="i-clock" viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><path d="M12 6v6l4 2"/></symbol>
+  <symbol id="i-carrot" viewBox="0 0 24 24"><path d="M2.27 21.7s9.87-3.5 12.73-6.36a4.5 4.5 0 0 0-6.36-6.37C5.77 11.84 2.27 21.7 2.27 21.7zM8.64 14l-2.05-2.04M15.34 15l-2.46-2.46M22 9s-1.33-2-3.5-2C16.86 7 15 9 15 9s1.33 2 3.5 2S22 9 22 9zM15 2s-2 1.33-2 3.5S15 9 15 9s2-1.84 2-3.5C17 3.33 15 2 15 2z"/></symbol>
+  <symbol id="i-heart" viewBox="0 0 24 24"><path d="M19 14c1.49-1.46 3-3.21 3-5.5A5.5 5.5 0 0 0 16.5 3c-1.76 0-3 .5-4.5 2-1.5-1.5-2.74-2-4.5-2A5.5 5.5 0 0 0 2 8.5c0 2.3 1.5 4.05 3 5.5l7 7Z"/></symbol>
+  <symbol id="i-bag" viewBox="0 0 24 24"><path d="M6 2 3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4Z"/><path d="M3 6h18"/><path d="M16 10a4 4 0 0 1-8 0"/></symbol>
+  <symbol id="i-arrow" viewBox="0 0 24 24"><path d="M5 12h14M13 6l6 6-6 6"/></symbol>
+  <symbol id="i-plus" viewBox="0 0 24 24"><path d="M12 5v14M5 12h14"/></symbol>
+  <symbol id="i-minus" viewBox="0 0 24 24"><path d="M5 12h14"/></symbol>
+  <symbol id="i-route" viewBox="0 0 24 24"><path d="M3 11 22 2l-9 19-2-8-8-2z"/></symbol>
+  <symbol id="i-petal" viewBox="0 0 40 40"><path d="M20 0Q28 12 20 20Q12 12 20 0ZM40 20Q28 28 20 20Q28 12 40 20ZM20 40Q12 28 20 20Q28 28 20 40ZM0 20Q12 12 20 20Q12 28 0 20Z"/></symbol>
+</svg>
+
+<div class="progress" aria-hidden="true"></div>
+
+<!-- Navegação flutuante -->
+<div class="nav-wrap">
+  <nav class="nav" aria-label="Principal">
+    <a href="#topo" class="nav-logo" aria-label="Senorita Confeitaria, voltar ao início">
+      <img src="img/logo.png" alt="" width="460" height="410">
+    </a>
+    <div class="nav-links">
+      <a href="#bolos">Bolos</a>
+      <a href="#chocolates">Chocolates</a>
+      <a href="#historia">Nossa história</a>
+      <a href="#quiosque">Quiosque</a>
+    </div>
+    <a class="btn btn-brown btn-sm magnetic" href="#pedido">
+      <svg class="ic" aria-hidden="true"><use href="#i-bag"/></svg>
+      <span>Fazer pedido</span>
+    </a>
+  </nav>
+</div>
+
+<main id="conteudo">
+
+  <!-- HERO -->
+  <section class="hero" id="topo">
+    <div class="hero-bg" aria-hidden="true"></div>
+    <div class="wrap hero-grid">
+      <div class="hero-copy">
+        <p class="eyebrow eyebrow--light"><span class="dot"></span>Confeitaria artesanal · Petrópolis – RJ</p>
+        <h1 class="display" data-split>Bolo de cenoura como você <em>nunca viu.</em></h1>
+        <p class="lead type">100% artesanal, com cenoura de verdade e chocolate nobre. Tudo para fazer parte das suas melhores lembranças.</p>
+        <div class="cta-row">
+          <a class="btn btn-orange btn-lg magnetic" href="#pedido">Fazer pedido <svg class="ic" aria-hidden="true"><use href="#i-arrow"/></svg></a>
+          <a class="btn btn-line-light btn-lg" href="#bolos">Ver cardápio</a>
+        </div>
+      </div>
+
+      <div class="hero-media">
+        <div class="hero-glow" aria-hidden="true"></div>
+        <figure class="hero-photo">
+          <div class="hero-photo-in">
+            <img src="img/hero-fatia.jpg" alt="Fatia de bolo de cenoura com cobertura de brigadeiro meio amargo sendo servida" width="603" height="753" fetchpriority="high">
+          </div>
+        </figure>
+        <span class="chip chip--a"><span class="chip-in">100% artesanal</span></span>
+        <span class="chip chip--b"><span class="chip-in">cenoura de verdade</span></span>
+        <div class="badge-wrap badge-wrap--hero" aria-hidden="true">
+          <svg class="badge" viewBox="0 0 140 140">
+            <defs><path id="bp1" d="M70 70m-43 0a43 43 0 1 1 86 0a43 43 0 1 1-86 0"/></defs>
+            <path fill="#C9C1BC" d="M70 10A8.6 8.6 0 0 1 85.53 12.04A8.6 8.6 0 0 1 100 18.04A8.6 8.6 0 0 1 112.43 27.57A8.6 8.6 0 0 1 121.96 40A8.6 8.6 0 0 1 127.96 54.47A8.6 8.6 0 0 1 130 70A8.6 8.6 0 0 1 127.96 85.53A8.6 8.6 0 0 1 121.96 100A8.6 8.6 0 0 1 112.43 112.43A8.6 8.6 0 0 1 100 121.96A8.6 8.6 0 0 1 85.53 127.96A8.6 8.6 0 0 1 70 130A8.6 8.6 0 0 1 54.47 127.96A8.6 8.6 0 0 1 40 121.96A8.6 8.6 0 0 1 27.57 112.43A8.6 8.6 0 0 1 18.04 100A8.6 8.6 0 0 1 12.04 85.53A8.6 8.6 0 0 1 10 70A8.6 8.6 0 0 1 12.04 54.47A8.6 8.6 0 0 1 18.04 40A8.6 8.6 0 0 1 27.57 27.57A8.6 8.6 0 0 1 40 18.04A8.6 8.6 0 0 1 54.47 12.04A8.6 8.6 0 0 1 70 10Z"/>
+            <g class="badge-spin">
+              <text class="badge-text" fill="#4A3A35"><textPath href="#bp1" textLength="268" lengthAdjust="spacing">um gesto de carinho em cada mordida •</textPath></text>
+            </g>
+            <path d="M70 88C54 77 48 68 48 60c0-6.6 5-11.5 11-11.5 4.6 0 8.2 2.6 11 6.6 2.8-4 6.4-6.6 11-6.6 6 0 11 4.9 11 11.5 0 8-6 17-22 28Z" fill="none" stroke="#4A3A35" stroke-width="6.5" stroke-linejoin="round"/>
+          </svg>
+        </div>
+      </div>
+    </div>
+    <svg class="tear tear--bottom" viewBox="0 0 1440 60" preserveAspectRatio="none" aria-hidden="true"><use href="#tear"/></svg>
+  </section>
+
+  <!-- DESTAQUES -->
+  <section class="feats" aria-label="Destaques">
+    <div class="wrap">
+      <ul class="feats-grid" data-stagger>
+        <li class="feat">
+          <span class="feat-ic"><svg class="ic" aria-hidden="true"><use href="#i-clock"/></svg></span>
+          <div>
+            <b class="status"><span class="status-dot"></span><span data-status>Seg. a sáb. no Centro</span></b>
+            <span>Rua 16 de Março, Galeria 80</span>
+          </div>
+        </li>
+        <li class="feat">
+          <span class="feat-ic"><svg class="ic" aria-hidden="true"><use href="#i-carrot"/></svg></span>
+          <div><b>Horta local</b><span>Feito com produtos frescos de horta local</span></div>
+        </li>
+        <li class="feat">
+          <span class="feat-ic"><svg class="ic" aria-hidden="true"><use href="#i-heart"/></svg></span>
+          <div><b>Feito com afeto</b><span>Um gesto de carinho em cada mordida</span></div>
+        </li>
+      </ul>
+    </div>
+  </section>
+
+  <!-- FAIXA -->
+  <div class="marquee" aria-hidden="true">
+    <div class="marquee-track">
+      <div class="marquee-group">
+        <span>bolo de cenoura</span><svg class="mq-ic"><use href="#i-petal"/></svg>
+        <span class="o">chocolate nobre</span><svg class="mq-ic"><use href="#i-petal"/></svg>
+        <span>afeto</span><svg class="mq-ic"><use href="#i-petal"/></svg>
+        <span class="o">carinho</span><svg class="mq-ic"><use href="#i-petal"/></svg>
+        <span>aconchego</span><svg class="mq-ic"><use href="#i-petal"/></svg>
+      </div>
+      <div class="marquee-group">
+        <span>bolo de cenoura</span><svg class="mq-ic"><use href="#i-petal"/></svg>
+        <span class="o">chocolate nobre</span><svg class="mq-ic"><use href="#i-petal"/></svg>
+        <span>afeto</span><svg class="mq-ic"><use href="#i-petal"/></svg>
+        <span class="o">carinho</span><svg class="mq-ic"><use href="#i-petal"/></svg>
+        <span>aconchego</span><svg class="mq-ic"><use href="#i-petal"/></svg>
+      </div>
+    </div>
+  </div>
+
+  <!-- BOLOS -->
+  <section class="bolos" id="bolos">
+    <div class="wrap">
+      <header class="sec-head center">
+        <p class="eyebrow">Os bolos</p>
+        <h2 class="display" data-split>A receita da casa da avó, em três coberturas</h2>
+        <p class="sub type">Massa de cenoura de verdade, coberta de chocolate nobre, do jeitinho que você lembra.</p>
+      </header>
+
+      <div class="bolos-grid" data-stagger>
+        <div class="bwrap">
+          <article class="bcard bcard--peach" data-tilt data-add-card="bolo-meio-amargo" data-cursor="+ pedir">
+            <h3 class="display">Meio amargo</h3>
+            <div class="bcard-photo"><img src="img/bolo-meio-amargo.jpg" alt="Bolo de cenoura com cobertura de brigadeiro meio amargo na marmitinha" width="800" height="1000" loading="lazy"></div>
+            <div class="bcard-foot">
+              <p class="type">cobertura de brigadeiro meio amargo</p>
+              <button class="add" type="button" data-add="bolo-meio-amargo" aria-label="Adicionar bolo com brigadeiro meio amargo ao pedido"><svg class="ic" aria-hidden="true"><use href="#i-plus"/></svg></button>
+            </div>
+          </article>
+        </div>
+        <div class="bwrap">
+          <article class="bcard bcard--apricot" data-tilt data-add-card="bolo-ao-leite" data-cursor="+ pedir">
+            <h3 class="display">Ao leite</h3>
+            <div class="bcard-photo"><img src="img/bolo-ao-leite.jpg" alt="Fatia de bolo de cenoura com cobertura de brigadeiro ao leite" width="800" height="1000" loading="lazy"></div>
+            <div class="bcard-foot">
+              <p class="type">cobertura de brigadeiro ao leite</p>
+              <button class="add" type="button" data-add="bolo-ao-leite" aria-label="Adicionar bolo com brigadeiro ao leite ao pedido"><svg class="ic" aria-hidden="true"><use href="#i-plus"/></svg></button>
+            </div>
+          </article>
+        </div>
+        <div class="bwrap">
+          <article class="bcard bcard--mauve" data-tilt data-add-card="bolo-craquelado" data-cursor="+ pedir">
+            <h3 class="display">Craquelado</h3>
+            <div class="bcard-photo"><img src="img/bolo-craquelado.jpg" alt="Bolo de cenoura com cobertura de chocolate craquelado sobre toalha xadrez" width="800" height="1000" loading="lazy"></div>
+            <div class="bcard-foot">
+              <p class="type">cobertura de chocolate craquelado</p>
+              <button class="add" type="button" data-add="bolo-craquelado" aria-label="Adicionar bolo com chocolate craquelado ao pedido"><svg class="ic" aria-hidden="true"><use href="#i-plus"/></svg></button>
+            </div>
+          </article>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CHOCOLATES (rolagem horizontal) -->
+  <section class="choco" id="chocolates">
+    <div class="wrap choco-head">
+      <div>
+        <p class="eyebrow">Chocolate nobre recheado</p>
+        <h2 class="display" data-split>Bolo de cenoura por dentro. Chocolate nobre por fora.</h2>
+      </div>
+      <div class="hprog" aria-hidden="true">
+        <span class="hprog-num" data-hcount>01</span>
+        <span class="hprog-bar"><i></i></span>
+        <span class="hprog-num">04</span>
+      </div>
+    </div>
+
+    <div class="hscroll">
+      <div class="htrack">
+        <article class="panel" data-cursor="+ pedir" data-add-card="barra">
+          <div class="panel-photo"><img src="img/barra.jpg" alt="Duas barras de chocolate cortadas mostrando o recheio de bolo de cenoura e brigadeiro" width="800" height="1000" loading="lazy"></div>
+          <div class="panel-txt">
+            <span class="panel-idx type">01 — recheados</span>
+            <h3 class="display">barra</h3>
+            <p class="type">barra de chocolate nobre com recheio de bolo de cenoura e brigadeiro meio amargo</p>
+            <button class="btn btn-brown magnetic" type="button" data-add="barra"><svg class="ic" aria-hidden="true"><use href="#i-plus"/></svg><span>Adicionar ao pedido</span></button>
+          </div>
+        </article>
+        <article class="panel" data-cursor="+ pedir" data-add-card="picole">
+          <div class="panel-photo"><img src="img/picole.jpg" alt="Picolé de chocolate mordido mostrando recheio de bolo de cenoura e brigadeiro ao leite" width="800" height="1000" loading="lazy"></div>
+          <div class="panel-txt">
+            <span class="panel-idx type">02 — recheados</span>
+            <h3 class="display">picolé</h3>
+            <p class="type">chocolate nobre em formato de picolé com recheio de bolo de cenoura e brigadeiro ao leite</p>
+            <button class="btn btn-brown magnetic" type="button" data-add="picole"><svg class="ic" aria-hidden="true"><use href="#i-plus"/></svg><span>Adicionar ao pedido</span></button>
+          </div>
+        </article>
+        <article class="panel" data-cursor="+ pedir" data-add-card="cone">
+          <div class="panel-photo"><img src="img/cone.jpg" alt="Dois cones de waffle cortados ao meio, recheados de bolo de cenoura e creme de avelã" width="800" height="1000" loading="lazy"></div>
+          <div class="panel-txt">
+            <span class="panel-idx type">03 — recheados</span>
+            <h3 class="display">cone</h3>
+            <p class="type">waffle em cone banhado em chocolate nobre com recheio de bolo de cenoura e creme de avelã</p>
+            <button class="btn btn-brown magnetic" type="button" data-add="cone"><svg class="ic" aria-hidden="true"><use href="#i-plus"/></svg><span>Adicionar ao pedido</span></button>
+          </div>
+        </article>
+        <article class="panel" data-cursor="+ pedir" data-add-card="cubos">
+          <div class="panel-photo"><img src="img/cubos.jpg" alt="Pilha de mini cubos de chocolate, alguns mordidos mostrando o recheio de bolo de cenoura" width="800" height="1000" loading="lazy"></div>
+          <div class="panel-txt">
+            <span class="panel-idx type">04 — recheados</span>
+            <h3 class="display">cubos</h3>
+            <p class="type">mini cubos de chocolate nobre com recheio de bolo de cenoura</p>
+            <button class="btn btn-brown magnetic" type="button" data-add="cubos"><svg class="ic" aria-hidden="true"><use href="#i-plus"/></svg><span>Adicionar ao pedido</span></button>
+          </div>
+        </article>
+        <a class="panel panel--end" href="#pedido">
+          <svg class="panel-end-ic" aria-hidden="true"><use href="#i-petal"/></svg>
+          <span class="display">Bateu a vontade?</span>
+          <span class="panel-end-cta">Monte seu pedido <svg class="ic" aria-hidden="true"><use href="#i-arrow"/></svg></span>
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- MANIFESTO -->
+  <section class="manifesto" id="historia">
+    <svg class="tear tear--top" viewBox="0 0 1440 60" preserveAspectRatio="none" aria-hidden="true"><use href="#tear"/></svg>
+    <div class="pattern" aria-hidden="true"></div>
+    <div class="wrap manifesto-in">
+      <p class="eyebrow eyebrow--dark">Nossa história</p>
+      <h2 class="manifesto-title display">Tudo começou com uma paixão: bolo de cenoura.</h2>
+      <p class="manifesto-text display" data-words>Uma <mark>paixão</mark> por bolo de cenoura. Uma saudade da infância na casa da avó. E um desejo de empreender com uma missão: espalhar <mark>afeto</mark>, <mark>carinho</mark> e <mark>aconchego</mark>.</p>
+      <div class="manifesto-sign" data-reveal>
+        <img src="img/logo.png" alt="Logo da Senorita Confeitaria: uma capivara desenhada à mão" width="460" height="410" loading="lazy">
+        <p class="display">Assim nasceu a<br><b>Senorita Confeitaria!</b></p>
+      </div>
+    </div>
+    <svg class="tear tear--bottom" viewBox="0 0 1440 60" preserveAspectRatio="none" aria-hidden="true"><use href="#tear"/></svg>
+  </section>
+
+  <!-- ORIGEM -->
+  <section class="origem">
+    <div class="wrap origem-grid">
+      <div class="origem-media" data-reveal>
+        <div class="blob"><img src="img/cenouras.jpg" alt="Caixa cheia de cenouras recém-colhidas na horta" width="1000" height="617" loading="lazy"></div>
+        <div class="badge-wrap badge-wrap--origem" aria-hidden="true">
+          <svg class="badge" viewBox="0 0 140 140">
+            <defs><path id="bp2" d="M70 70m-50 0a50 50 0 1 1 100 0a50 50 0 1 1-100 0"/></defs>
+            <circle cx="70" cy="70" r="66" fill="#FFFAF4"/>
+            <circle cx="70" cy="70" r="66" fill="none" stroke="#E27843" stroke-width="2.5"/>
+            <g class="badge-spin">
+              <text class="badge-text badge-text--orange" fill="#C2582A"><textPath href="#bp2" textLength="306" lengthAdjust="spacing">feito com produtos frescos de horta local •</textPath></text>
+            </g>
+            <g fill="none" stroke="#C2582A" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M59 58c0-4 22-4 22 0-1 14-6 28-11 34-5-6-10-20-11-34Z"/>
+              <path d="M66 52c-3-6-7-8-10-8 1 4 4 7 9 9M70 51c0-6 2-10 5-12 1 4-1 8-4 12M74 53c3-4 7-5 10-4-2 3-5 5-9 5"/>
+              <path d="M64 66c1.5 2 4 2 5.5 0M72 66c1.5 2 4 2 5.5 0"/>
+              <path d="M66 73c2 2.4 6 2.4 8 0"/>
+            </g>
+          </svg>
+        </div>
+      </div>
+      <div class="origem-txt">
+        <p class="eyebrow">Da horta para o forno</p>
+        <h2 class="display" data-split>Da colheita das melhores cenouras ao preparo do chocolate nobre.</h2>
+        <p class="type sub" data-reveal>Cada etapa é feita com dedicação, responsabilidade e parceiros de confiança. Senorita Confeitaria: onde sabor, afeto e inovação se encontram.</p>
+        <div data-reveal><a class="btn btn-pill magnetic" href="#quiosque">Visite o quiosque <svg class="ic" aria-hidden="true"><use href="#i-arrow"/></svg></a></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- QUIOSQUE -->
+  <section class="quiosque" id="quiosque">
+    <div class="wrap q-grid">
+      <figure class="q-photo" data-reveal>
+        <img src="img/quiosque.jpg" alt="Quiosque de madeira da Senorita Confeitaria com rodas de bicicleta, vitrine de doces e balões laranja" width="1000" height="847" loading="lazy">
+        <figcaption class="q-tag type">Galeria 80 · Centro</figcaption>
+      </figure>
+      <div class="q-info">
+        <p class="eyebrow">Visite o quiosque</p>
+        <h2 class="display" data-split>Passa lá pra dar um oi (e levar um bolo).</h2>
+        <p class="status status--lg"><span class="status-dot"></span><span data-status>Confira nossos horários</span></p>
+        <ul class="hours" data-reveal>
+          <li data-day="1"><span>Segunda</span><b>12h – 18h</b></li>
+          <li data-day="2,3,4,5"><span>Terça a sexta</span><b>11h – 19h</b></li>
+          <li data-day="6"><span>Sábado</span><b>10h – 19h</b></li>
+          <li data-day="0"><span>Domingo</span><b>Fechado</b></li>
+        </ul>
+        <p class="addr" data-reveal>
+          <svg class="ic" aria-hidden="true"><use href="#i-pin"/></svg>
+          <span><b>Rua 16 de Março, Galeria 80</b><br>Centro, Petrópolis – RJ</span>
+        </p>
+        <div class="cta-row" data-reveal>
+          <a class="btn btn-brown magnetic" href="https://www.google.com/maps/search/?api=1&amp;query=Rua+16+de+Mar%C3%A7o%2C+80%2C+Centro%2C+Petr%C3%B3polis+-+RJ" target="_blank" rel="noopener"><svg class="ic" aria-hidden="true"><use href="#i-route"/></svg><span>Como chegar</span></a>
+          <a class="btn btn-line" href="https://wa.me/5524999880401?text=Ol%C3%A1%2C%20Senorita!" target="_blank" rel="noopener"><svg class="ic ic-fill" aria-hidden="true"><use href="#i-wa"/></svg><span>Chamar no WhatsApp</span></a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- PEDIDO -->
+  <section class="pedido" id="pedido">
+    <svg class="tear tear--top" viewBox="0 0 1440 60" preserveAspectRatio="none" aria-hidden="true"><use href="#tear"/></svg>
+    <div class="pattern" aria-hidden="true"></div>
+    <div class="wrap">
+      <header class="sec-head">
+        <p class="eyebrow eyebrow--light"><span class="dot"></span>Encomendas</p>
+        <h2 class="display" data-split>Monte seu pedido</h2>
+        <p class="sub type">Escolha as delícias, diga como quer receber e finalize pelo WhatsApp. A gente confirma valores e horário por lá.</p>
+      </header>
+
+      <div class="pedido-grid">
+        <div class="order-list" id="order-list" aria-label="Escolha os produtos"></div>
+
+        <form class="order-card" id="order-form">
+          <div class="field">
+            <label for="f-nome">Seu nome</label>
+            <input id="f-nome" name="nome" type="text" autocomplete="given-name" placeholder="Como podemos te chamar?" required>
+          </div>
+          <fieldset class="field">
+            <legend>Como prefere receber?</legend>
+            <div class="seg">
+              <label><input type="radio" name="entrega" value="retirada" checked><span>Retirar no quiosque</span></label>
+              <label><input type="radio" name="entrega" value="delivery"><span>Delivery</span></label>
+            </div>
+          </fieldset>
+          <div class="field" id="field-endereco" hidden>
+            <label for="f-end">Endereço para entrega</label>
+            <input id="f-end" name="endereco" type="text" autocomplete="street-address" placeholder="Rua, número e bairro">
+          </div>
+          <div class="field-row">
+            <div class="field">
+              <label for="f-data">Para quando? <span class="opt">(opcional)</span></label>
+              <input id="f-data" name="data" type="date">
+            </div>
+            <div class="field">
+              <label for="f-obs">Observações <span class="opt">(opcional)</span></label>
+              <input id="f-obs" name="obs" type="text" placeholder="Ex.: é presente">
+            </div>
+          </div>
+
+          <div class="chat" aria-live="polite">
+            <div class="chat-head"><img src="img/logo.png" alt="" width="460" height="410"><span>Prévia da mensagem</span></div>
+            <div class="bubble"><span id="preview"></span><span class="bubble-time">agora ✓✓</span></div>
+          </div>
+
+          <p class="form-hint" id="form-hint" hidden></p>
+          <button class="btn btn-wa btn-block btn-lg" type="submit">
+            <svg class="ic ic-fill" aria-hidden="true"><use href="#i-wa"/></svg>
+            <span>Enviar pedido pelo WhatsApp</span>
+          </button>
+          <p class="form-note">Abre o WhatsApp com a mensagem pronta. Nada é enviado sem você confirmar.</p>
+        </form>
+      </div>
+      <noscript><p class="noscript type">Faça seu pedido direto pelo <a href="https://wa.me/5524999880401">WhatsApp (24) 99988-0401</a>.</p></noscript>
+    </div>
+  </section>
+</main>
+
+<!-- RODAPÉ -->
+<footer class="footer">
+  <div class="geo" aria-hidden="true"></div>
+  <div class="wrap footer-top">
+    <img class="footer-logo" src="img/logo-claro.png" alt="Senorita Confeitaria" width="460" height="410" loading="lazy">
+    <div class="footer-claim">
+      <p class="display">Onde sabor, afeto e inovação se encontram.</p>
+      <a class="ig-link magnetic" href="https://www.instagram.com/senoritaconfeitaria/" target="_blank" rel="noopener">
+        <svg class="ic" aria-hidden="true"><use href="#i-ig"/></svg>@senoritaconfeitaria
+      </a>
+    </div>
+  </div>
+  <div class="wrap footer-cols">
+    <div>
+      <h4>Quiosque</h4>
+      <p>Rua 16 de Março, Galeria 80<br>Centro, Petrópolis – RJ</p>
+    </div>
+    <div>
+      <h4>Horários</h4>
+      <p>Segunda · 12h – 18h<br>Terça a sexta · 11h – 19h<br>Sábado · 10h – 19h</p>
+    </div>
+    <div>
+      <h4>Pedidos</h4>
+      <p><a href="https://wa.me/5524999880401" target="_blank" rel="noopener">WhatsApp (24) 99988-0401</a><br><a href="https://www.instagram.com/senoritaconfeitaria/" target="_blank" rel="noopener">Instagram</a></p>
+    </div>
+  </div>
+  <div class="wrap footer-bottom">
+    <span>© <span id="ano">2026</span> Senorita Confeitaria · Petrópolis – RJ</span>
+    <a href="#topo">Voltar ao topo ↑</a>
+  </div>
+</footer>
+
+<!-- Flutuantes -->
+<button class="cart-pill" type="button" aria-live="polite" hidden>
+  <svg class="ic" aria-hidden="true"><use href="#i-bag"/></svg>
+  <span><b data-cart-count>0</b> <span data-cart-label>itens</span> no pedido</span>
+  <span class="cart-go">Finalizar <svg class="ic" aria-hidden="true"><use href="#i-arrow"/></svg></span>
+</button>
+
+<a class="fab" href="https://wa.me/5524999880401?text=Ol%C3%A1%2C%20Senorita!%20Gostaria%20de%20fazer%20um%20pedido." target="_blank" rel="noopener" aria-label="Pedir pelo WhatsApp">
+  <svg aria-hidden="true"><use href="#i-wa"/></svg>
+</a>
+
+<!-- RASCUNHO: etiqueta de prévia. Remover quando o site for aprovado (junto com o bloco .draft no style.css). -->
+<aside class="draft" id="draft" role="note">
+  <span class="draft-dot"></span>
+  <span><b>Prévia do site</b> · rascunho para aprovação</span>
+  <button type="button" aria-label="Fechar aviso de prévia" onclick="this.parentElement.remove()">✕</button>
+</aside>
+
+<div class="cursor" hidden aria-hidden="true"><span></span></div>
+</body>
+</html>
